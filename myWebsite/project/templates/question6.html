@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Question 6
+{% endblock %}
+
+{% block main %}
+
+        <script>
+            function checkMultiChoice(event) {
+                let button = event.target;
+                let buttons = button.parentElement.querySelectorAll('button');
+                
+                // Disable all buttons after first click
+                buttons.forEach(btn => btn.disabled = true);
+
+                if (button.innerHTML == 'Bubble Sort') {
+
+                    button.style.backgroundColor = 'green';
+                    button.parentElement.querySelector('.feedback').innerHTML = 'Correct!';
+                } else {
+                    button.style.backgroundColor = 'Red';
+                    button.parentElement.querySelector('.feedback').innerHTML = 'Incorrect';
+                }
+            }
+        </script>
+        <div class="mb-3">
+            <h1>Question 6</h1>
+            <hr>
+        <!-- TODO: Add multiple choice question here -->
+            <h3>Which sorting algorithm was introduced in Week 3?</h3>
+            <button onclick="checkMultiChoice(event)">Merge Sort</button>
+            <button onclick="checkMultiChoice(event)">Quick Sort</button>
+            <button onclick="checkMultiChoice(event)">Bubble Sort</button>
+            <button onclick="checkMultiChoice(event)">Heap Sort</button>
+            <p class="feedback"></p>
+        </div>
+    <hr>
+    <footer>
+        <button onclick="window.location.href='{{ url_for('question5') }}'" class="start-btn"> &larr;Preview</button>
+        <button onclick="window.location.href='{{ url_for('question7') }}'" class="start-btn">Next &rarr;</button>
+    </footer>
+{% endblock %}

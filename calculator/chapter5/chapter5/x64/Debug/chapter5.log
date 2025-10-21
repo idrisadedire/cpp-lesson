@@ -1,0 +1,26 @@
+﻿  chapter5.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\string_view(12): warning STL4038: The contents of <string_view> are available only with C++17 or later.
+C:\Users\adedi\source\repos\calculator\chapter5\chapter5.cpp(14,17): error C2039: 'string_view': is not a member of 'std'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\string(23,1):
+      see declaration of 'std'
+  
+C:\Users\adedi\source\repos\calculator\chapter5\chapter5.cpp(14,17): error C2065: 'string_view': undeclared identifier
+C:\Users\adedi\source\repos\calculator\chapter5\chapter5.cpp(14,29): error C2146: syntax error: missing ')' before identifier 'sv'
+C:\Users\adedi\source\repos\calculator\chapter5\chapter5.cpp(15,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\adedi\source\repos\calculator\chapter5\chapter5.cpp(15,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\adedi\source\repos\calculator\chapter5\chapter5.cpp(23,22): error C2039: 'string_view': is not a member of 'std'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\string(23,1):
+      see declaration of 'std'
+  
+C:\Users\adedi\source\repos\calculator\chapter5\chapter5.cpp(23,6): error C2182: 'printOlder': this use of 'void' is not valid
+C:\Users\adedi\source\repos\calculator\chapter5\chapter5.cpp(23,22): error C2065: 'string_view': undeclared identifier
+C:\Users\adedi\source\repos\calculator\chapter5\chapter5.cpp(23,34): error C2146: syntax error: missing ')' before identifier 'name1'
+C:\Users\adedi\source\repos\calculator\chapter5\chapter5.cpp(23,56): error C2039: 'string_view': is not a member of 'std'
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\string(23,1):
+      see declaration of 'std'
+  
+C:\Users\adedi\source\repos\calculator\chapter5\chapter5.cpp(24,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\adedi\source\repos\calculator\chapter5\chapter5.cpp(24,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\adedi\source\repos\calculator\chapter5\chapter5.cpp(34,21): error C2064: term does not evaluate to a function taking 1 arguments
+C:\Users\adedi\source\repos\calculator\chapter5\chapter5.cpp(37,21): error C2064: term does not evaluate to a function taking 1 arguments
+C:\Users\adedi\source\repos\calculator\chapter5\chapter5.cpp(39,5): error C2064: term does not evaluate to a function taking 4 arguments

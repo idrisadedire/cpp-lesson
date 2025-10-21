@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<div>
+Here's a curated set of 15 multiple-choice questions spanning Weeks 1 to 9 of CS50. These cover key concepts in C programming, algorithms, data structures, memory, and databases. Let’s see how sharp your CS50 instincts are &#129504; &#128161;
+</div>
+<hr>
+<button onclick="window.location.href='{{ url_for('question1') }}'" class="start-btn">
+    Get Started
+</button>
+{% endblock %}

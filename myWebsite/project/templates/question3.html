@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Question 3
+{% endblock %}
+
+{% block main %}
+
+        <script>
+            function checkMultiChoice(event) {
+                let button = event.target;
+                let buttons = button.parentElement.querySelectorAll('button');
+                
+                // Disable all buttons after first click
+                buttons.forEach(btn => btn.disabled = true);
+
+                if (button.innerHTML == 'A string') {
+
+                    button.style.backgroundColor = 'green';
+                    button.parentElement.querySelector('.feedback').innerHTML = 'Correct!';
+                } else {
+                    button.style.backgroundColor = 'Red';
+                    button.parentElement.querySelector('.feedback').innerHTML = 'Incorrect';
+                }
+            }
+        </script>
+        <div class="mb-3">
+            <h1>Question 3</h1>
+            <hr>
+        <!-- TODO: Add multiple choice question here -->
+            <h3>What does <strong>get_string()</strong> from the CS50 library return?</h3>
+            <button onclick="checkMultiChoice(event)">An integer</button>
+            <button onclick="checkMultiChoice(event)">A string</button>
+            <button onclick="checkMultiChoice(event)">A float</button>
+            <button onclick="checkMultiChoice(event)">A boolean</button>
+            <p class="feedback"></p>
+        </div>
+    <hr>
+    <footer>
+        <button onclick="window.location.href='{{ url_for('question2') }}'" class="start-btn"> &larr;Preview</button>
+        <button onclick="window.location.href='{{ url_for('question4') }}'" class="start-btn">Next &rarr;</button>
+    </footer>
+{% endblock %}

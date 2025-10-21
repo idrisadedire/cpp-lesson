@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Question 12
+{% endblock %}
+
+{% block main %}
+
+        <script>
+            function checkMultiChoice(event) {
+                let button = event.target;
+                let buttons = button.parentElement.querySelectorAll('button');
+                
+                // Disable all buttons after first click
+                buttons.forEach(btn => btn.disabled = true);
+
+                if (button.innerHTML == 'To map keys to indices') {
+
+                    button.style.backgroundColor = 'green';
+                    button.parentElement.querySelector('.feedback').innerHTML = 'Correct!';
+                } else {
+                    button.style.backgroundColor = 'Red';
+                    button.parentElement.querySelector('.feedback').innerHTML = 'Incorrect';
+                }
+            }
+        </script>
+        <div class="mb-3">
+            <h1>Question 12</h1>
+            <hr>
+        <!-- TODO: Add multiple choice question here -->
+            <h3>Purpose of a hash function in a hash table?</h3>
+            <button onclick="checkMultiChoice(event)">To sort data</button>
+            <button onclick="checkMultiChoice(event)">To map keys to indices</button>
+            <button onclick="checkMultiChoice(event)">To compress data</button>
+            <button onclick="checkMultiChoice(event)">To encrypt data</button>
+            <p class="feedback"></p>
+        </div>
+    <hr>
+    <footer>
+        <button onclick="window.location.href='{{ url_for('question11') }}'" class="start-btn"> &larr;Preview</button>
+        <button onclick="window.location.href='{{ url_for('question13') }}'" class="start-btn">Next &rarr;</button>
+    </footer>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Question 5
+{% endblock %}
+
+{% block main %}
+
+        <script>
+            function checkMultiChoice(event) {
+                let button = event.target;
+                let buttons = button.parentElement.querySelectorAll('button');
+                
+                // Disable all buttons after first click
+                buttons.forEach(btn => btn.disabled = true);
+
+                if (button.innerHTML == '0') {
+
+                    button.style.backgroundColor = 'green';
+                    button.parentElement.querySelector('.feedback').innerHTML = 'Correct!';
+                } else {
+                    button.style.backgroundColor = 'Red';
+                    button.parentElement.querySelector('.feedback').innerHTML = 'Incorrect';
+                }
+            }
+        </script>
+        <div class="mb-3">
+            <h1>Question 5</h1>
+            <hr>
+        <!-- TODO: Add multiple choice question here -->
+            <h3>What is the index of the first element in a C array?</h3>
+            <button onclick="checkMultiChoice(event)">1</button>
+            <button onclick="checkMultiChoice(event)">0</button>
+            <button onclick="checkMultiChoice(event)">-1</button>
+            <button onclick="checkMultiChoice(event)">Depends on array size</button>
+            <p class="feedback"></p>
+        </div>
+    <hr>
+    <footer>
+        <button onclick="window.location.href='{{ url_for('question4') }}';" class="start-btn"> &larr;Preview</button>
+        <button onclick="window.location.href='{{ url_for('question6') }}';" class="start-btn">Next &rarr;</button>
+    </footer>
+{% endblock %}

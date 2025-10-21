@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Question 13
+{% endblock %}
+
+{% block main %}
+
+        <script>
+            function checkMultiChoice(event) {
+                let button = event.target;
+                let buttons = button.parentElement.querySelectorAll('button');
+                
+                // Disable all buttons after first click
+                buttons.forEach(btn => btn.disabled = true);
+
+                if (button.innerHTML == '.bmp') {
+
+                    button.style.backgroundColor = 'green';
+                    button.parentElement.querySelector('.feedback').innerHTML = 'Correct!';
+                } else {
+                    button.style.backgroundColor = 'Red';
+                    button.parentElement.querySelector('.feedback').innerHTML = 'Incorrect';
+                }
+            }
+        </script>
+        <div class="mb-3">
+            <h1>Question 13</h1>
+            <hr>
+        <!-- TODO: Add multiple choice question here -->
+            <h3>Which file format is used for bitmap images in CS50?</h3>
+            <button onclick="checkMultiChoice(event)">.gif</button>
+            <button onclick="checkMultiChoice(event)">.jpg</button>
+            <button onclick="checkMultiChoice(event)">.bmp</button>
+            <button onclick="checkMultiChoice(event)">.png</button>
+            <p class="feedback"></p>
+        </div>
+    <hr>
+    <footer>
+        <button onclick="window.location.href='{{ url_for('question12') }}'" class="start-btn"> &larr;Preview</button>
+        <button onclick="window.location.href='{{ url_for('question14') }}'" class="start-btn">Next &rarr;</button>
+    </footer>
+{% endblock %}

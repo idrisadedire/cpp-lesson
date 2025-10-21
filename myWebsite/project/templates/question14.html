@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Question 14
+{% endblock %}
+
+{% block main %}
+
+        <script>
+            function checkMultiChoice(event) {
+                let button = event.target;
+                let buttons = button.parentElement.querySelectorAll('button');
+                
+                // Disable all buttons after first click
+                buttons.forEach(btn => btn.disabled = true);
+
+
+                if (button.innerHTML == 'Structured Query Language') {
+
+                    button.style.backgroundColor = 'green';
+                    button.parentElement.querySelector('.feedback').innerHTML = 'Correct!';
+                } else {
+                    button.style.backgroundColor = 'Red';
+                    button.parentElement.querySelector('.feedback').innerHTML = 'Incorrect';
+                }
+            }
+        </script>
+        <div class="mb-3">
+            <h1>Question 14</h1>
+            <hr>
+        <!-- TODO: Add multiple choice question here -->
+            <h3>What does <strong>SQL</strong> stand for?</h3>
+            <button onclick="checkMultiChoice(event)">System Query Language</button>
+            <button onclick="checkMultiChoice(event)">Standard Query Language</button>
+            <button onclick="checkMultiChoice(event)">Simple Query Language</button>
+            <button onclick="checkMultiChoice(event)">Structured Query Language</button>
+            <p class="feedback"></p>
+        </div>
+    <hr>
+    <footer>
+        <button onclick="window.location.href='{{ url_for('question13') }}'" class="start-btn"> &larr;Preview</button>
+        <button onclick="window.location.href='{{ url_for('question15') }}'" class="start-btn">Next &rarr;</button>
+    </footer>
+{% endblock %}

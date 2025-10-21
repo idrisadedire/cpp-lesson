@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+
+        <script>
+            function checkMultiChoice(event) {
+                let button = event.target;
+                let buttons = button.parentElement.querySelectorAll('button');
+                
+                // Disable all buttons after first click
+                buttons.forEach(btn => btn.disabled = true);
+
+                if (button.innerHTML == 'Displays output to the screen') {
+
+                    button.style.backgroundColor = 'green';
+                    button.parentElement.querySelector('.feedback').innerHTML = 'Correct!';
+                }else {
+                    button.style.backgroundColor = 'Red';
+                    button.parentElement.querySelector('.feedback').innerHTML = 'Incorrect';
+                }
+            }
+        </script>
+        <div class="mb-3">
+            <h1>Question 1</h1>
+            <hr>
+        <!-- TODO: Add multiple choice question here -->
+            <h3>What does <strong>printf()</strong> do in C?</h3>
+            <button onclick="checkMultiChoice(event)">Allocates memory</button>
+            <button onclick="checkMultiChoice(event)">Displays output to the screen</button>
+            <button onclick="checkMultiChoice(event)">Reads input from the user</button>
+            <button onclick="checkMultiChoice(event)">Terminates the program</button>
+            <p class="feedback"></p>
+        </div>
+    <hr>
+    <footer>
+        <button onclick="window.location.href='{{ url_for('question2') }}'" class="start-btn">Next &rarr;</button>
+    </footer>
+{% endblock %}

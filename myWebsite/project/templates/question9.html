@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Question 9
+{% endblock %}
+
+{% block main %}
+
+        <script>
+            function checkMultiChoice(event) {
+                let button = event.target;
+                let buttons = button.parentElement.querySelectorAll('button');
+                
+                // Disable all buttons after first click
+                buttons.forEach(btn => btn.disabled = true);
+
+                if (button.innerHTML == 'Stack') {
+
+                    button.style.backgroundColor = 'green';
+                    button.parentElement.querySelector('.feedback').innerHTML = 'Correct!';
+                } else {
+                    button.style.backgroundColor = 'Red';
+                    button.parentElement.querySelector('.feedback').innerHTML = 'Incorrect';
+                }
+            }
+        </script>
+        <div class="mb-3">
+            <h1>Question 9</h1>
+            <hr>
+        <!-- TODO: Add multiple choice question here -->
+            <h3>Which data structure uses LIFO (Last In, First Out)?</h3>
+            <button onclick="checkMultiChoice(event)">Stack</button>
+            <button onclick="checkMultiChoice(event)">Array</button>
+            <button onclick="checkMultiChoice(event)">Linked List</button>
+            <button onclick="checkMultiChoice(event)">Queue</button>
+            <p class="feedback"></p>
+        </div>
+    <hr>
+    <footer>
+        <button onclick="window.location.href='{{ url_for('question8') }}'" class="start-btn"> &larr;Preview</button>
+        <button onclick="window.location.href='{{ url_for('question10') }}'" class="start-btn">Next &rarr;</button>
+    </footer>
+{% endblock %}

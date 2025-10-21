@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Question 10
+{% endblock %}
+
+{% block main %}
+
+        <script>
+            function checkMultiChoice(event) {
+                let button = event.target;
+                let buttons = button.parentElement.querySelectorAll('button');
+                
+                // Disable all buttons after first click
+                buttons.forEach(btn => btn.disabled = true);
+
+                if (button.innerHTML == 'Dynamic memory allocation') {
+
+                    button.style.backgroundColor = 'green';
+                    button.parentElement.querySelector('.feedback').innerHTML = 'Correct!';
+                } else {
+                    button.style.backgroundColor = 'Red';
+                    button.parentElement.querySelector('.feedback').innerHTML = 'Incorrect';
+                }
+            }
+        </script>
+        <div class="mb-3">
+            <h1>Question 10</h1>
+            <hr>
+        <!-- TODO: Add multiple choice question here -->
+            <h3>Main advantage of linked lists over arrays?</h3>
+            <button onclick="checkMultiChoice(event)">Better sorting</button>
+            <button onclick="checkMultiChoice(event)">Faster access time</button>
+            <button onclick="checkMultiChoice(event)">Fixed size</button>
+            <button onclick="checkMultiChoice(event)">Dynamic memory allocation</button>
+            <p class="feedback"></p>
+        </div>
+    <hr>
+    <footer>
+        <button onclick="window.location.href='{{ url_for('question9') }}'" class="start-btn"> &larr;Preview</button>
+        <button onclick="window.location.href='{{ url_for('question11') }}'" class="start-btn">Next &rarr;</button>
+    </footer>
+{% endblock %}
